@@ -16,6 +16,6 @@ class DistanceMatrixServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-distancematrix-ai')
-            ->hasConfigFile();
+            ->hasConfigFile('distance-matrix');
     }
 }
