@@ -1,12 +1,5 @@
 # Laravel wrapper for the DISTANCEMATRIX.AI API
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/mybit/laravel-distancematrix-ai.svg?style=flat-square)](https://packagist.org/packages/mybit/laravel-distancematrix-ai)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/mybit/laravel-distancematrix-ai/run-tests?label=tests)](https://github.com/mybit/laravel-distancematrix-ai/actions?query=workflow%3Arun-tests+branch%3Amaster)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/mybit/laravel-distancematrix-ai/Check%20&%20fix%20styling?label=code%20style)](https://github.com/mybit/laravel-distancematrix-ai/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/mybit/laravel-distancematrix-ai.svg?style=flat-square)](https://packagist.org/packages/mybit/laravel-distancematrix-ai)
-
----
-
 Fetches estimated travel time and distance for multiple destinations from the DISTANCEMATRIX.AI API.
 
 ## Installation
