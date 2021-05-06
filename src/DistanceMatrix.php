@@ -21,7 +21,92 @@ class DistanceMatrix
     public const UNITS_METRIC = 'metric';
 
     private const API_URL = 'https://api.distancematrix.ai/maps/api/distancematrix/json';
-    private const LANGUAGE = 'en-US';
+    private const LANGUAGE = 'en';
+
+    // see https://distancematrix.ai/dev#request_parameters
+    private const ALLOWED_LANGUAGES = [
+        'af',
+        'sq',
+        'am',
+        'ar',
+        'hy',
+        'az',
+        'eu',
+        'be',
+        'bn',
+        'bs',
+        'bg',
+        'my',
+        'ca',
+        'zh',
+        'zh-CN',
+        'zh-HK',
+        'zh-TW',
+        'hr',
+        'cs',
+        'da',
+        'nl',
+        'en',
+        'en-AU',
+        'en-GB',
+        'et',
+        'fa',
+        'fi',
+        'fil',
+        'fr',
+        'fr-CA',
+        'gl',
+        'ka',
+        'de',
+        'el',
+        'gu',
+        'iw',
+        'hi',
+        'hu',
+        'is',
+        'id',
+        'it',
+        'ja',
+        'kn',
+        'kk',
+        'km',
+        'ko',
+        'ky',
+        'lo',
+        'lv',
+        'lt',
+        'mk',
+        'ms',
+        'ml',
+        'mr',
+        'mn',
+        'ne',
+        'no',
+        'pl',
+        'pt',
+        'pt-BR',
+        'pt-PT',
+        'pa',
+        'ro',
+        'ru',
+        'sr',
+        'si',
+        'sk',
+        'sl',
+        'es',
+        'es-419',
+        'sw',
+        'sv',
+        'ta',
+        'te',
+        'th',
+        'tr',
+        'uk',
+        'ur',
+        'uz',
+        'vi',
+        'zu',
+    ];
 
     private $avoid;
     private $destinations;
@@ -46,8 +131,13 @@ class DistanceMatrix
 
     public function setLanguage($language): DistanceMatrix
     {
-        $this->language = $language;
-
+        if (in_array($language, static::ALLOWED_LANGUAGES)) {
+            $this->language = $language;
+        } elseif (in_array(strtolower(explode('-', $language, 2)[0]), static::ALLOWED_LANGUAGES)) {
+            $this->language = strtolower(explode('-', $language, 2)[0]);
+        } else {
+            $this->language = null;
+        }
         return $this;
     }
 
