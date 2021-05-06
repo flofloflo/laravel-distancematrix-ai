@@ -6,10 +6,10 @@ use Mybit\DistanceMatrix\Exceptions\Exception;
 
 class Element
 {
-    const STATUS_OK = 'OK';
-    const STATUS_NOT_FOUND = 'NOT_FOUND';
-    const STATUS_ZERO_RESULTS = 'ZERO_RESULTS';
-    const STATUS = [
+    public const STATUS_OK = 'OK';
+    public const STATUS_NOT_FOUND = 'NOT_FOUND';
+    public const STATUS_ZERO_RESULTS = 'ZERO_RESULTS';
+    public const STATUS = [
         self::STATUS_OK,
         self::STATUS_NOT_FOUND,
         self::STATUS_ZERO_RESULTS,
@@ -31,17 +31,17 @@ class Element
         $this->distance = $distance;
     }
 
-    public function getStatus() : string
+    public function getStatus(): string
     {
         return $this->status;
     }
 
-    public function getDuration() : Duration
+    public function getDuration(): Duration
     {
         return $this->duration;
     }
 
-    public function getDistance() : Distance
+    public function getDistance(): Distance
     {
         return $this->distance;
     }

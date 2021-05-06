@@ -14,17 +14,17 @@ class Distance
         $this->value = $value;
     }
 
-    public function __toString() : string
+    public function __toString(): string
     {
         return $this->text;
     }
 
-    public function getText() : string
+    public function getText(): string
     {
         return $this->text;
     }
 
-    public function getValue() : int
+    public function getValue(): int
     {
         return $this->value;
     }

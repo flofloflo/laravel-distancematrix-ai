@@ -11,7 +11,7 @@ class Address
         $this->address = $address;
     }
 
-    public function __toString() : string
+    public function __toString(): string
     {
         return $this->address;
     }

@@ -11,7 +11,7 @@ class Row
         $this->elements = $elements;
     }
 
-    public function getElements() : array
+    public function getElements(): array
     {
         return $this->elements;
     }

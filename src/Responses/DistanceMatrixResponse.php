@@ -4,14 +4,14 @@ namespace Mybit\DistanceMatrix\Responses;
 
 class DistanceMatrixResponse
 {
-    const RESPONSE_STATUS_OK = 'OK';
-    const RESPONSE_STATUS_INVALID_REQUEST = 'INVALID_REQUEST';
-    const RESPONSE_STATUS_MAX_ELEMENTS_EXCEEDED = 'MAX_ELEMENTS_EXCEEDED';
-    const RESPONSE_STATUS_OVER_QUERY_LIMIT = 'OVER_QUERY_LIMIT';
-    const RESPONSE_STATUS_REQUEST_DENIED = 'REQUEST_DENIED';
-    const RESPONSE_STATUS_UNKNOWN_ERROR = 'UNKNOWN_ERROR';
+    public const RESPONSE_STATUS_OK = 'OK';
+    public const RESPONSE_STATUS_INVALID_REQUEST = 'INVALID_REQUEST';
+    public const RESPONSE_STATUS_MAX_ELEMENTS_EXCEEDED = 'MAX_ELEMENTS_EXCEEDED';
+    public const RESPONSE_STATUS_OVER_QUERY_LIMIT = 'OVER_QUERY_LIMIT';
+    public const RESPONSE_STATUS_REQUEST_DENIED = 'REQUEST_DENIED';
+    public const RESPONSE_STATUS_UNKNOWN_ERROR = 'UNKNOWN_ERROR';
 
-    const RESPONSE_STATUS = [
+    public const RESPONSE_STATUS = [
         self::RESPONSE_STATUS_OK,
         self::RESPONSE_STATUS_INVALID_REQUEST,
         self::RESPONSE_STATUS_MAX_ELEMENTS_EXCEEDED,
@@ -40,32 +40,32 @@ class DistanceMatrixResponse
         $this->buildResponseObject();
     }
 
-    public function getStatus() : string
+    public function getStatus(): string
     {
         return $this->status;
     }
 
-    public function getResponseObject() : \stdClass
+    public function getResponseObject(): \stdClass
     {
         return $this->responseObject;
     }
 
-    public function getOriginAddresses() : array
+    public function getOriginAddresses(): array
     {
         return $this->originAddresses;
     }
 
-    public function getDestinationAddresses() : array
+    public function getDestinationAddresses(): array
     {
         return $this->destinationAddresses;
     }
 
-    public function getRows() : array
+    public function getRows(): array
     {
         return $this->rows;
     }
 
-    private function buildResponseObject() : void
+    private function buildResponseObject(): void
     {
         $this->status = $this->responseObject->status;
 
@@ -88,17 +88,17 @@ class DistanceMatrixResponse
         }
     }
 
-    private function addOriginAddress(Address $originAddress) : void
+    private function addOriginAddress(Address $originAddress): void
     {
         $this->originAddresses[] = $originAddress;
     }
 
-    private function addDestinationAddress(Address $destinationAddress) : void
+    private function addDestinationAddress(Address $destinationAddress): void
     {
         $this->destinationAddresses[] = $destinationAddress;
     }
 
-    private function addRow(Row $row) : void
+    private function addRow(Row $row): void
     {
         $this->rows[] = $row;
     }
