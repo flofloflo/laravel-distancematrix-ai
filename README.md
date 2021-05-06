@@ -30,7 +30,7 @@ You can install the package via composer [VCS](https://getcomposer.org/doc/05-re
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --provider="Mybit\DistanceMatrix\DistanceMatrixServiceProvider" --tag="laravel-distancematrix-ai-config"
+php artisan vendor:publish --provider="Mybit\DistanceMatrix\DistanceMatrixServiceProvider"
 ```
 
 This is the contents of the published config file:
