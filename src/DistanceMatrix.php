@@ -171,28 +171,16 @@ class DistanceMatrix
                 break;
             case DistanceMatrixResponse::RESPONSE_STATUS_INVALID_REQUEST:
                 throw new Exceptions\ResponseException("Invalid request.", 1);
-
-                break;
             case DistanceMatrixResponse::RESPONSE_STATUS_MAX_ELEMENTS_EXCEEDED:
                 throw new Exceptions\ResponseException("The product of the origin and destination exceeds the limit per request.", 2);
-
-                break;
             case DistanceMatrixResponse::RESPONSE_STATUS_OVER_QUERY_LIMIT:
                 throw new Exceptions\ResponseException("The service has received too many requests from your application in the allowed time range.", 3);
-
-                break;
             case DistanceMatrixResponse::RESPONSE_STATUS_REQUEST_DENIED:
                 throw new Exceptions\ResponseException("The service denied the use of the Distance Matrix API service by your application.", 4);
-
-                break;
             case DistanceMatrixResponse::RESPONSE_STATUS_UNKNOWN_ERROR:
                 throw new Exceptions\ResponseException("Unknown error.", 5);
-
-                break;
             default:
                 throw new Exceptions\ResponseException(sprintf("Unknown status code: %s", $response->getStatus()), 6);
-
-                break;
         }
     }
 }
