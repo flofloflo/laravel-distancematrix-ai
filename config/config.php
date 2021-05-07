@@ -1,6 +1,6 @@
 <?php
 
-use Mybit\DistanceMatrix\DistanceMatrix;
+use Mybit\LaravelDistancematrixAi\DistanceMatrix;
 
 return [
     /**

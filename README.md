@@ -8,27 +8,29 @@ You can install the package via composer [VCS](https://getcomposer.org/doc/05-re
 
 ```json
 {
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/flofloflo/laravel-distancematrix-ai"
-        }
-    ],
-    "require": {
-        "mybit/laravel-distancematrix-ai": "dev-master"
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/flofloflo/laravel-distancematrix-ai"
     }
+  ],
+  "require": {
+    "mybit/laravel-distancematrix-ai": "dev-master"
+  }
 }
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --provider="Mybit\DistanceMatrix\DistanceMatrixServiceProvider"
+php artisan vendor:publish --provider="Mybit\LaravelDistancematrixAi\DistanceMatrixServiceProvider"
 ```
 
 This is the contents of the published config file:
 
 ```php
+use Mybit\LaravelDistancematrixAi\DistanceMatrix;
+
 return [
      /**
      * The API key which should be used for calls to the DISTANCEMATRIX.AI API
@@ -50,17 +52,13 @@ return [
 ## Usage
 
 ```php
-$distanceMatrix = new Mybit\DistanceMatrix();
-$distance = $distanceMatrix
-    ->setLanguage('de-DE')
+use Mybit\LaravelDistancematrixAi\DistanceMatrixFacade;
+
+$distanceResponse = DistanceMatrixFacade::setLanguage('de')
     ->addOrigin('53.54942880970846, 9.95784213616111')
     ->addDestination('53.549626412962326, 9.968088174277717')
     ->sendRequest();
 ```
-
-## Testing
-
-Currently no tests implemented :-(
 
 ## Changelog
 
@@ -76,10 +74,10 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
--   [Final Bytes](https://github.com/finalbytes/distancematrix-ai-api) - I used his distancematrix-ai-api package as starting point for this implementation
--   [Spatie](https://spatie.be/open-source) - Using their package skeleton
--   [Florian Heller](https://github.com/flofloflo)
--   [All Contributors](../../contributors)
+- [Final Bytes](https://github.com/finalbytes/distancematrix-ai-api) - I used his distancematrix-ai-api package as starting point for this implementation
+- [Spatie](https://spatie.be/open-source) - Using their package skeleton
+- [Florian Heller](https://github.com/flofloflo)
+- [All Contributors](../../contributors)
 
 ## License
 

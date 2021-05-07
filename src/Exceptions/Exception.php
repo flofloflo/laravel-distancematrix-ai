@@ -1,6 +1,6 @@
 <?php
 
-namespace Mybit\DistanceMatrix\Exceptions;
+namespace Mybit\LaravelDistancematrixAi\Exceptions;
 
 class Exception extends \Exception
 {

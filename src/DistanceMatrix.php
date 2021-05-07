@@ -1,9 +1,9 @@
 <?php
 
-namespace Mybit\DistanceMatrix;
+namespace Mybit\LaravelDistancematrixAi;
 
 use GuzzleHttp\Client;
-use Mybit\DistanceMatrix\Responses\DistanceMatrixResponse;
+use Mybit\LaravelDistancematrixAi\Responses\DistanceMatrixResponse;
 
 class DistanceMatrix
 {
@@ -117,13 +117,13 @@ class DistanceMatrix
 
     public function getApiKey(): string
     {
-        return config('distance-matrix.api_key');
+        return config('distancematrix-ai.api_key');
     }
 
     public function getLanguage(): string
     {
         if (is_null($this->language)) {
-            $this->language = config('distance-matrix.defaults.language', self::LANGUAGE);
+            $this->language = config('distancematrix-ai.defaults.language', self::LANGUAGE);
         }
 
         return $this->language;
@@ -144,7 +144,7 @@ class DistanceMatrix
     public function getUnits(): string
     {
         if (is_null($this->units)) {
-            $this->units = config('distance-matrix.defaults.units', self::UNITS_METRIC);
+            $this->units = config('distancematrix-ai.defaults.units', self::UNITS_METRIC);
         }
 
         return $this->units;
@@ -184,7 +184,7 @@ class DistanceMatrix
     public function getMode(): string
     {
         if (is_null($this->mode)) {
-            $this->mode = config('distance-matrix.defaults.mode', self::MODE_DRIVING);
+            $this->mode = config('distancematrix-ai.defaults.mode', self::MODE_DRIVING);
         }
 
         return $this->mode;
@@ -200,7 +200,7 @@ class DistanceMatrix
     public function getAvoid(): string
     {
         if (is_null($this->avoid)) {
-            $this->avoid = config('distance-matrix.defaults.avoid', self::AVOID_INDOOR);
+            $this->avoid = config('distancematrix-ai.defaults.avoid', self::AVOID_INDOOR);
         }
 
         return $this->avoid;

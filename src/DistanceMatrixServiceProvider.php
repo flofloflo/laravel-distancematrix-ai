@@ -1,21 +1,34 @@
 <?php
 
-namespace Mybit\DistanceMatrix;
+namespace Mybit\LaravelDistancematrixAi;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Illuminate\Support\ServiceProvider;
 
-class DistanceMatrixServiceProvider extends PackageServiceProvider
+class DistanceMatrixServiceProvider extends ServiceProvider
 {
-    public function configurePackage(Package $package): void
+    /**
+     * Bootstrap the application services.
+     */
+    public function boot()
     {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
-        $package
-            ->name('laravel-distancematrix-ai')
-            ->hasConfigFile('distance-matrix');
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/../config/config.php' => config_path('distancematrix-ai.php'),
+            ], 'config');
+        }
+    }
+
+    /**
+     * Register the application services.
+     */
+    public function register()
+    {
+        // Automatically apply the package configuration
+        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'distancematrix-ai');
+
+        // Register the main class to use with the facade
+        $this->app->singleton('laravel-distancematrix-ai', function () {
+            return new DistanceMatrix;
+        });
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Mybit\DistanceMatrix\Responses;
+namespace Mybit\LaravelDistancematrixAi\Responses;
 
-use Mybit\DistanceMatrix\Exceptions\Exception;
+use Mybit\LaravelDistancematrixAi\Exceptions\Exception;
 
 class Element
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Mybit\DistanceMatrix\Responses;
+namespace Mybit\LaravelDistancematrixAi\Responses;
 
 class DistanceMatrixResponse
 {
