@@ -200,7 +200,7 @@ class DistanceMatrix
     public function getAvoid(): string
     {
         if (is_null($this->avoid)) {
-            $this->avoid = config('distancematrix-ai.defaults.avoid', self::AVOID_INDOOR);
+            $this->avoid = config('distancematrix-ai.defaults.avoid');
         }
 
         return $this->avoid;
