@@ -190,14 +190,19 @@ class DistanceMatrix
         return $this->mode;
     }
 
-    public function setMode($mode): DistanceMatrix
+    public function setMode(string $mode): DistanceMatrix
     {
         $this->mode = $mode;
 
         return $this;
     }
 
-    public function getAvoid(): string
+    /**
+     * Returns the configured route restrictions
+     *
+     * @return string|null
+     */
+    public function getAvoid(): ?string
     {
         if (is_null($this->avoid)) {
             $this->avoid = config('distancematrix-ai.defaults.avoid');
@@ -206,7 +211,13 @@ class DistanceMatrix
         return $this->avoid;
     }
 
-    public function setAvoid($avoid): DistanceMatrix
+    /**
+     * Sets the route restrictions
+     *
+     * @param string|null $avoid
+     * @return DistanceMatrix
+     */
+    public function setAvoid(?string $avoid): DistanceMatrix
     {
         $this->avoid = $avoid;
 
