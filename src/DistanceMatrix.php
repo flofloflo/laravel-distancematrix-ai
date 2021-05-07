@@ -115,7 +115,7 @@ class DistanceMatrix
     private $origins;
     private $units;
 
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return config('distancematrix-ai.api_key');
     }
@@ -238,8 +238,11 @@ class DistanceMatrix
         return $this;
     }
 
-    public function sendRequest(): DistanceMatrixResponse
+    public function sendRequest(): ?DistanceMatrixResponse
     {
+        if (is_null($this->getApiKey())) {
+            return null;
+        }
         $this->validateRequest();
         $data = [
             'key' => $this->getApiKey(),
