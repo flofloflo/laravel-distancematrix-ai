@@ -5,7 +5,7 @@ namespace Mybit\LaravelDistancematrixAi\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Mybit\LaravelDistancematrixAi\Skeleton\SkeletonClass
+ * @see \Mybit\LaravelDistancematrixAi\DistanceMatrix
  */
 class DistanceMatrix extends Facade
 {
