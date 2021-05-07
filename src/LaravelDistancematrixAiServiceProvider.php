@@ -4,7 +4,7 @@ namespace Mybit\LaravelDistancematrixAi;
 
 use Illuminate\Support\ServiceProvider;
 
-class LaravelDistancematrixAiServiceProvider extends ServiceProvider
+class DistanceMatrixServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.

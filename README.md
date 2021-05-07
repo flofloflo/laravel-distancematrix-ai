@@ -23,7 +23,7 @@ You can install the package via composer [VCS](https://getcomposer.org/doc/05-re
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --provider="Mybit\LaravelDistancematrixAi\LaravelDistancematrixAiServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Mybit\LaravelDistancematrixAi\DistanceMatrixServiceProvider" --tag="config"
 ```
 
 This is the contents of the published config file:

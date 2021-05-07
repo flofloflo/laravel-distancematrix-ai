@@ -1,54 +1,50 @@
 {
-    "name": "mybit/laravel-distancematrix-ai",
-    "description": "Laravel wrapper for the DISTANCEMATRIX.AI API",
-    "keywords": [
-        "mybit",
-        "laravel-distancematrix-ai"
-    ],
-    "homepage": "https://github.com/mybit/laravel-distancematrix-ai",
-    "license": "MIT",
-    "type": "library",
-    "authors": [
-        {
-            "name": "Florian Heller",
-            "email": "fh@my-b.it",
-            "role": "Developer"
-        }
-    ],
-    "require": {
-        "php": "^7.4|^8.0",
-        "illuminate/support": "^8.0"
-    },
-    "require-dev": {
-        "orchestra/testbench": "^6.0",
-        "phpunit/phpunit": "^9.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Mybit\\LaravelDistancematrixAi\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Mybit\\LaravelDistancematrixAi\\Tests\\": "tests"
-        }
-    },
-    "scripts": {
-        "test": "vendor/bin/phpunit",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
-
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Mybit\\LaravelDistancematrixAi\\LaravelDistancematrixAiServiceProvider"
-            ],
-            "aliases": {
-                "LaravelDistancematrixAi": "Mybit\\LaravelDistancematrixAi\\LaravelDistancematrixAiFacade"
-            }
-        }
+  "name": "mybit/laravel-distancematrix-ai",
+  "description": "Laravel wrapper for the DISTANCEMATRIX.AI API",
+  "keywords": [
+    "mybit",
+    "laravel-distancematrix-ai"
+  ],
+  "homepage": "https://github.com/mybit/laravel-distancematrix-ai",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Florian Heller",
+      "email": "fh@my-b.it",
+      "role": "Developer"
     }
+  ],
+  "require": {
+    "php": "^7.4|^8.0",
+    "illuminate/support": "^8.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^6.0",
+    "phpunit/phpunit": "^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mybit\\LaravelDistancematrixAi\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Mybit\\LaravelDistancematrixAi\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Mybit\\LaravelDistancematrixAi\\DistanceMatrixServiceProvider"
+      ]
+    }
+  }
 }
