@@ -74,8 +74,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Final Bytes](https://github.com/finalbytes/distancematrix-ai-api) - I used his distancematrix-ai-api package as starting point for this implementation
-- [Spatie](https://spatie.be/open-source) - Using their package skeleton
+- [Final Bytes](https://github.com/finalbytes/google-distance-matrix-api) - I used his google-distance-matrix-api package as starting point for this implementation
 - [Florian Heller](https://github.com/flofloflo)
 - [All Contributors](../../contributors)
 
