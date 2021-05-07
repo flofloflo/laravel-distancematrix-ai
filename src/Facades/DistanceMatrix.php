@@ -1,13 +1,13 @@
 <?php
 
-namespace Mybit\LaravelDistancematrixAi;
+namespace Mybit\LaravelDistancematrixAi\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * @see \Mybit\LaravelDistancematrixAi\Skeleton\SkeletonClass
  */
-class DistanceMatrixFacade extends Facade
+class DistanceMatrix extends Facade
 {
     /**
      * Get the registered name of the component.

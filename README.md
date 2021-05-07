@@ -23,7 +23,7 @@ You can install the package via composer [VCS](https://getcomposer.org/doc/05-re
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --provider="Mybit\LaravelDistancematrixAi\DistanceMatrixServiceProvider"
+php artisan vendor:publish --provider="Mybit\LaravelDistancematrixAi\LaravelDistancematrixAiServiceProvider" --tag="config"
 ```
 
 This is the contents of the published config file:
@@ -52,9 +52,9 @@ return [
 ## Usage
 
 ```php
-use Mybit\LaravelDistancematrixAi\DistanceMatrixFacade;
+use Mybit\LaravelDistancematrixAi\Facades\DistanceMatrix;
 
-$distanceResponse = DistanceMatrixFacade::setLanguage('de')
+$distanceResponse = DistanceMatrix::setLanguage('de')
     ->addOrigin('53.54942880970846, 9.95784213616111')
     ->addDestination('53.549626412962326, 9.968088174277717')
     ->sendRequest();

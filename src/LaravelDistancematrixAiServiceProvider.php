@@ -4,7 +4,7 @@ namespace Mybit\LaravelDistancematrixAi;
 
 use Illuminate\Support\ServiceProvider;
 
-class DistanceMatrixServiceProvider extends ServiceProvider
+class LaravelDistancematrixAiServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -27,8 +27,8 @@ class DistanceMatrixServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'distancematrix-ai');
 
         // Register the main class to use with the facade
-        $this->app->singleton('laravel-distancematrix-ai', function () {
-            return new DistanceMatrix;
+        $this->app->bind('laravel-distancematrix-ai', function($app) {
+            return new DistanceMatrix();
         });
     }
 }
