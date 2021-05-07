@@ -60,10 +60,12 @@ return [
 use Mybit\LaravelDistancematrixAi\Facades\DistanceMatrix;
 
 $distanceResponse = DistanceMatrix::setLanguage('de')
-    ->addOrigin('53.54942880970846, 9.95784213616111')
-    ->addDestination('53.549626412962326, 9.968088174277717')
+    ->setOrigin('53.54942880970846, 9.95784213616111')
+    ->setDestination('53.549626412962326, 9.968088174277717')
     ->sendRequest();
 ```
+
+**Heads up:** When using `addOrigin()` or `addDestination()` in combination with the facade, you can end up querying the locations of the previous call(s), as the facade will return the same DistanceMatrix instance for the complete application request lifecycle. To prevent this, use `setOrigin()` / `setDestination()` at the beginning of your query as they will reset the internal origins/destinations array.
 
 ## Changelog
 

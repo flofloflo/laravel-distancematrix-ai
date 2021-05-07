@@ -169,6 +169,13 @@ class DistanceMatrix
         return $this;
     }
 
+    public function setOrigin($origin): DistanceMatrix
+    {
+        $this->origins = [$origin];
+
+        return $this;
+    }
+
     public function getDestinations(): array
     {
         return $this->destinations;
@@ -177,6 +184,13 @@ class DistanceMatrix
     public function addDestination($destination): DistanceMatrix
     {
         $this->destinations[] = $destination;
+
+        return $this;
+    }
+
+    public function setDestination($destination): DistanceMatrix
+    {
+        $this->destinations = [$destination];
 
         return $this;
     }
