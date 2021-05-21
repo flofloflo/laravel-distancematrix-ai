@@ -85,9 +85,11 @@ class DistanceMatrixResponse
             foreach ($this->responseObject->rows as $row) {
                 $elements = [];
                 foreach ($row->elements as $element) {
-                    $duration = new Duration($element->duration->text, $element->duration->value);
-                    $distance = new Distance($element->distance->text, $element->distance->value);
-                    $elements[] = new Element($element->status, $duration, $distance);
+                    if(!empty($element) && !empty($element->duration) && !empty($element->distance)) {
+                        $duration = new Duration($element->duration->text, $element->duration->value);
+                        $distance = new Distance($element->distance->text, $element->distance->value);
+                        $elements[] = new Element($element->status, $duration, $distance);
+                    }
                 }
                 $this->addRow(new Row($elements));
             }
