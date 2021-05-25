@@ -15,4 +15,9 @@ class Row
     {
         return $this->elements;
     }
+
+    public function getFirstElement(): ?Element
+    {
+        return empty($this->elements) ? null : $this->elements[0];
+    }
 }

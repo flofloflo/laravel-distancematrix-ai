@@ -65,6 +65,17 @@ class DistanceMatrixResponse
         return $this->rows;
     }
 
+    public function getFirstRow(): ?Row
+    {
+        return empty($this->rows) ? null : $this->rows[0];
+    }
+
+    public function getFirstElement(): ?Element
+    {
+        $row = $this->getFirstRow();
+        return is_null($row) ? null : $row->getFirstElement();
+    }
+
     private function buildResponseObject(): void
     {
         $this->status = $this->responseObject->status;
