@@ -30,5 +30,8 @@ class DistanceMatrixServiceProvider extends ServiceProvider
         $this->app->bind('laravel-distancematrix-ai', function($app) {
             return new DistanceMatrix();
         });
+        $this->app->bind('laravel-distancematrix-ai-geocoding', function($app) {
+            return new Geocoding();
+        });
     }
 }

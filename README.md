@@ -54,7 +54,7 @@ return [
 ];
 ```
 
-## Usage
+## Usage (DistanceMatrix API)
 
 ```php
 use Mybit\LaravelDistancematrixAi\Facades\DistanceMatrix;
@@ -66,6 +66,19 @@ $distanceResponse = DistanceMatrix::setLanguage('de')
 ```
 
 **Heads up:** When using `addOrigin()` or `addDestination()` in combination with the facade, you can end up querying the locations of the previous call(s), as the facade will return the same DistanceMatrix instance for the complete application request lifecycle. To prevent this, use `setOrigin()` / `setDestination()` at the beginning of your query as they will reset the internal origins/destinations array.
+
+## Usage (Geocoding API)
+
+See [https://distancematrix.ai/geo](https://distancematrix.ai/geo) for more information on the geocoding API.
+
+```php
+use Mybit\LaravelDistancematrixAi\Facades\Geocoding;
+
+$geocodingResponse = Geocoding::setLanguage('de')
+    ->setAddress('1600 Amphitheatre Parkway, Mountain View, CA')
+    ->setBounds(-124.48200307,32.52952353,-114.13078164,42.00949894)
+    ->sendRequest();
+```
 
 ## Changelog
 
