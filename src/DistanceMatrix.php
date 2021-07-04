@@ -49,9 +49,9 @@ class DistanceMatrix
 
     public function setLanguage($language): DistanceMatrix
     {
-        if (in_array($language, static::ALLOWED_LANGUAGES)) {
+        if (in_array($language, static::$allowedLanguages)) {
             $this->language = $language;
-        } elseif (in_array(strtolower(explode('-', $language, 2)[0]), static::ALLOWED_LANGUAGES)) {
+        } elseif (in_array(strtolower(explode('-', $language, 2)[0]), static::$allowedLanguages)) {
             $this->language = strtolower(explode('-', $language, 2)[0]);
         } else {
             $this->language = null;

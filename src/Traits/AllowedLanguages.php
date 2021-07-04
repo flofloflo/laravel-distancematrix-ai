@@ -5,7 +5,7 @@ namespace Mybit\LaravelDistancematrixAi\Traits;
 trait AllowedLanguages
 {
     // see https://distancematrix.ai/dev#request_parameters
-    protected const ALLOWED_LANGUAGES = [
+    protected $allowedLanguages = [
         'af',
         'sq',
         'am',
