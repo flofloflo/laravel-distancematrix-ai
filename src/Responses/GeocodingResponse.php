@@ -68,18 +68,18 @@ class GeocodingResponse
     {
         $this->status = $this->responseObject->status;
 
-        if (isset($this->responseObject->formattedAddress)) {
-            $this->formattedAddress = $this->responseObject->formattedAddress;
+        if (isset($this->responseObject->result->formattedAddress)) {
+            $this->formattedAddress = $this->responseObject->result->formattedAddress;
         }
 
-        if (isset($this->responseObject->geometry->locationType)) {
-            $this->locationType = $this->responseObject->geometry->locationType;
+        if (isset($this->responseObject->result->geometry->locationType)) {
+            $this->locationType = $this->responseObject->result->geometry->locationType;
         }
 
-        if (isset($this->responseObject->geometry->location)) {
+        if (isset($this->responseObject->result->geometry->location)) {
             $this->geometry = new Geometry(
-                $this->responseObject->geometry->location->lat, 
-                $this->responseObject->geometry->location->long
+                $this->responseObject->result->geometry->location->lat, 
+                $this->responseObject->result->geometry->location->long
             );
         }
     }
