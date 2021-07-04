@@ -61,7 +61,7 @@ class Geocoding
         return $this->bounds;
     }
 
-    public function setBounds(float $minLong, float $minLat, float $maxLong, float $maxLat): DistanceMatrix
+    public function setBounds(float $minLong, float $minLat, float $maxLong, float $maxLat): Geocoding
     {
         $this->bounds = [
             $minLong,
