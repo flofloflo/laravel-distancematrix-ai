@@ -67,7 +67,7 @@ class GeocodingResponse
     private function buildResponseObject(): void
     {
         $this->status = $this->responseObject->status;
-        
+
         if(!isset($this->responseObject->result[0])) {
             return;
         }
@@ -84,7 +84,7 @@ class GeocodingResponse
         if (isset($result->geometry->location)) {
             $this->geometry = new Geometry(
                 $result->geometry->location->lat, 
-                $result->geometry->location->long
+                $result->geometry->location->lng
             );
         }
     }
