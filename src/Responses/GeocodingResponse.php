@@ -73,12 +73,12 @@ class GeocodingResponse
         }
         $result = $this->responseObject->result[0];
 
-        if (isset($result->formattedAddress)) {
-            $this->formattedAddress = $result->formattedAddress;
+        if (isset($result->formatted_address)) {
+            $this->formattedAddress = $result->formatted_address;
         }
 
-        if (isset($result->geometry->locationType)) {
-            $this->locationType = $result->geometry->locationType;
+        if (isset($result->geometry->location_type)) {
+            $this->locationType = $result->geometry->location_type;
         }
 
         if (isset($result->geometry->location)) {
