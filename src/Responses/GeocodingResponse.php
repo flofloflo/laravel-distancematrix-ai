@@ -59,7 +59,7 @@ class GeocodingResponse
         return $this->locationType;
     }
 
-    public function getGeometry(): Geometry
+    public function getGeometry(): ?Geometry
     {
         return $this->geometry;
     }
