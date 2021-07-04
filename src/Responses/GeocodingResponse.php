@@ -67,19 +67,24 @@ class GeocodingResponse
     private function buildResponseObject(): void
     {
         $this->status = $this->responseObject->status;
+        
+        if(!isset($this->responseObject->result[0])) {
+            return;
+        }
+        $result = $this->responseObject->result[0];
 
-        if (isset($this->responseObject->result->formattedAddress)) {
-            $this->formattedAddress = $this->responseObject->result->formattedAddress;
+        if (isset($result->formattedAddress)) {
+            $this->formattedAddress = $result->formattedAddress;
         }
 
-        if (isset($this->responseObject->result->geometry->locationType)) {
-            $this->locationType = $this->responseObject->result->geometry->locationType;
+        if (isset($result->geometry->locationType)) {
+            $this->locationType = $result->geometry->locationType;
         }
 
-        if (isset($this->responseObject->result->geometry->location)) {
+        if (isset($result->geometry->location)) {
             $this->geometry = new Geometry(
-                $this->responseObject->result->geometry->location->lat, 
-                $this->responseObject->result->geometry->location->long
+                $result->geometry->location->lat, 
+                $result->geometry->location->long
             );
         }
     }
