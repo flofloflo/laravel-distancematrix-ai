@@ -117,7 +117,13 @@ class Geocoding
 
     private function request($type = 'GET', $url): GeocodingResponse
     {
-        $client = new Client();
+        $client = new Client([
+            'headers' => [
+                'User-Agent' => 'Laravel DistanceMatrix.AI wrapper/v1.0',
+                'Accept' => 'application/json',
+                'Accept-Encoding' => 'gzip, deflate, br',
+            ]
+        ]);
         $response = $client->request($type, $url);
         if ($response->getStatusCode() !== 200) {
             throw new \Exception('Response with status code ' . $response->getStatusCode());
