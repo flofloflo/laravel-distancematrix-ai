@@ -179,7 +179,7 @@ class DistanceMatrix
         $parameters = http_build_query($data);
         $url = self::API_URL . '?' . $parameters;
 
-        return $this->request('GET', $url);
+        return $this->request($url);
     }
 
     private function validateRequest(): void
@@ -192,7 +192,7 @@ class DistanceMatrix
         }
     }
 
-    private function request($type = 'GET', $url): DistanceMatrixResponse
+    private function request($url, $type = 'GET'): DistanceMatrixResponse
     {
         $client = new Client([
             'headers' => [
