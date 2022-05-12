@@ -18,25 +18,13 @@
   "require": {
     "php": "^7.4|^8.0",
     "guzzlehttp/guzzle": "^7.0",
-    "illuminate/support": "^8.0"
+    "illuminate/support": "^8|^9"
   },
-  "require-dev": {
-    "orchestra/testbench": "^6.0",
-    "phpunit/phpunit": "^9.0"
-  },
+  "require-dev": {},
   "autoload": {
     "psr-4": {
       "Mybit\\LaravelDistancematrixAi\\": "src"
     }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Mybit\\LaravelDistancematrixAi\\Tests\\": "tests"
-    }
-  },
-  "scripts": {
-    "test": "vendor/bin/phpunit",
-    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
   },
   "config": {
     "sort-packages": true
