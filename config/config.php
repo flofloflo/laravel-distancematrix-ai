@@ -4,9 +4,14 @@ use Mybit\LaravelDistancematrixAi\DistanceMatrix;
 
 return [
     /**
-     * The API key which should be used for calls to the DISTANCEMATRIX.AI API
+     * The API keys which should be used for calls to the DISTANCEMATRIX.AI API
      */
-    'api_key' => env('DISTANCEMATRIX_API_KEY', null),
+    'api_keys'  => [
+        'dm_accurate' => env('DISTANCEMATRIX_API_KEY_DM', env('DISTANCEMATRIX_API_KEY', null)),
+        'dm_fast' => env('DISTANCEMATRIX_API_KEY_DM_FAST', env('DISTANCEMATRIX_API_KEY', null)),
+        'gc_accurate' => env('DISTANCEMATRIX_API_KEY_GC', env('DISTANCEMATRIX_API_KEY', null)),
+        'gc_fast' => env('DISTANCEMATRIX_API_KEY_GC_FAST', env('DISTANCEMATRIX_API_KEY', null)),
+    ],
 
     /**
      * Default values

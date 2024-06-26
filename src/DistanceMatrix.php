@@ -24,6 +24,7 @@ class DistanceMatrix
     public const UNITS_METRIC = 'metric';
 
     private const API_URL = 'https://api.distancematrix.ai/maps/api/distancematrix/json';
+    private const API_URL_FAST = 'https://api-v2.distancematrix.ai/maps/api/distancematrix/json';
     private const LANGUAGE = 'en';
 
     private $avoid;
@@ -33,9 +34,17 @@ class DistanceMatrix
     private $origins;
     private $units;
 
-    public function getApiKey(): ?string
+    private function apiUrl(bool $fast = false): string
     {
-        return config('distancematrix-ai.api_key');
+        return $fast ? self::API_URL_FAST : self::API_URL;
+    }
+
+    public function getApiKey(bool $fast = false): ?string
+    {
+        if ($fast) {
+            return config('distancematrix-ai.api_keys.dm_fast');
+        }
+        return config('distancematrix-ai.api_keys.dm_accurate');
     }
 
     public function getLanguage(): string
@@ -161,14 +170,14 @@ class DistanceMatrix
      *
      * @return DistanceMatrixResponse|null
      */
-    public function sendRequest(): ?DistanceMatrixResponse
+    public function sendRequest(bool $fast = false): ?DistanceMatrixResponse
     {
-        if (is_null($this->getApiKey())) {
+        if (is_null($this->getApiKey($fast))) {
             return null;
         }
         $this->validateRequest();
         $data = [
-            'key' => $this->getApiKey(),
+            'key' => $this->getApiKey($fast),
             'language' => $this->getLanguage(),
             'origins' => count($this->origins) > 1 ? implode('|', $this->origins) : $this->origins[0],
             'destinations' => count($this->destinations) > 1 ? implode('|', $this->destinations) : $this->destinations[0],
@@ -177,7 +186,7 @@ class DistanceMatrix
             'units' => $this->getUnits(),
         ];
         $parameters = http_build_query($data);
-        $url = self::API_URL . '?' . $parameters;
+        $url = $this->apiUrl($fast) . '?' . $parameters;
 
         return $this->request($url);
     }
