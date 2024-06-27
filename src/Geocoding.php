@@ -111,7 +111,7 @@ class Geocoding
         $parameters = http_build_query($data);
         $url = $this->apiUrl($fast)  . '?' . $parameters;
 
-        return $this->request('GET', $url);
+        return $this->request($url);
     }
 
     private function validateRequest(): void
@@ -124,7 +124,7 @@ class Geocoding
         }
     }
 
-    private function request($type = 'GET', $url): GeocodingResponse
+    private function request($url, $type = 'GET'): GeocodingResponse
     {
         $client = new Client([
             'headers' => [
